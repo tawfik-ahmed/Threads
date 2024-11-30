@@ -3,7 +3,7 @@ import LeftSideBar from "@/components/shared/LeftSideBar";
 import RightSideBar from "@/components/shared/RightSideBar";
 import TopBar from "@/components/shared/TopBar";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "../globals.css";
 
 export const metadata = {
@@ -11,8 +11,10 @@ export const metadata = {
   description: "A Next.js 15 Meta Threads Application",
 };
 
-const inter = Inter({ subsets: ["latin"] });
-
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  display: "swap",
+});
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,7 +23,7 @@ export default function RootLayout({
   return (
     <ClerkProvider dynamic>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={openSans.className}>
           <TopBar />
 
           <main className="flex flex-row">

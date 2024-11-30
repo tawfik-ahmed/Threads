@@ -7,11 +7,10 @@ import { fetchPosts } from "@/lib/actions/thread.actions";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs/server";
 
-async function Home({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | undefined };
-}) {
+const Home = async (props: {
+  searchParams: Promise<{ [key: string]: string | undefined }>;
+}) => {
+  const searchParams = await props.searchParams;
   const user = await currentUser();
   if (!user) return null;
 
@@ -56,6 +55,6 @@ async function Home({
       />
     </>
   );
-}
+};
 
 export default Home;
