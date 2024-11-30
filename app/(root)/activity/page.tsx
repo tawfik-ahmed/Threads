@@ -23,7 +23,7 @@ const Page = async () => {
             <Link key={activity._id} href={`/thread/${activity.parentId}`}>
               <article className="activity-card">
                 <Image
-                  src={activity.author.image}
+                  src={activity.author?.image}
                   alt="profile picture"
                   width={20}
                   height={20}

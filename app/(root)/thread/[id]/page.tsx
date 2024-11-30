@@ -36,7 +36,7 @@ const Page = async (props: { params: Promise<{ id: string }> }) => {
       <div className="mt-7">
         <Comment
           threadId={thread.id}
-          currentUserImg={userInfo.image}
+          currentUserImg={userInfo?.image}
           currentUserId={JSON.stringify(userInfo._id)}
         />
       </div>

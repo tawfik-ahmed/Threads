@@ -1,11 +1,22 @@
 import mongoose from "mongoose";
 
 const communitySchema = new mongoose.Schema({
-  id: { type: String, required: true },
-  username: { type: String, required: true, unique: true },
-  name: { type: String, required: true },
-  image: { type: String },
-  bio: { type: String },
+  id: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  image: String,
+  bio: String,
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -16,9 +27,15 @@ const communitySchema = new mongoose.Schema({
       ref: "Thread",
     },
   ],
-  members: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  members: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
 });
 
 const Community =
   mongoose.models.Community || mongoose.model("Community", communitySchema);
+
 export default Community;
