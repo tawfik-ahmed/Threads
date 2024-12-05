@@ -28,7 +28,6 @@ const LeftSideBar = () => {
 
           if (link.route === "/profile") {
             link.route = `${link.route}/${userId}`;
-            console.log(link.route);
           }
 
           return (

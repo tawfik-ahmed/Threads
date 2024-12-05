@@ -23,7 +23,7 @@ const Page = async (props: { params: Promise<{ id: string }> }) => {
         authUserId={user.id}
         name={userInfo.name}
         username={userInfo.username}
-        imgUrl={userInfo?.image}
+        imgUrl={userInfo?.image || ""}
         bio={userInfo.bio}
       />
 
