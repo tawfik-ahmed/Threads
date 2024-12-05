@@ -12,7 +12,7 @@ const Home = async (props: {
 }) => {
   const searchParams = await props.searchParams;
   const user = await currentUser();
-  if (!user) return null;
+  if (!user) redirect("/onboarding");
 
   const userInfo = await fetchUser(user.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
