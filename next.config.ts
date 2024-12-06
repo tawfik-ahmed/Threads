@@ -4,6 +4,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   experimental: {
+    staleTimes: {
+      dynamic: 60,
+    },
     serverActions: true,
     serverComponentsExternalPackages: ["mongoose"],
   },
