@@ -1,4 +1,8 @@
+<p align="center">
+
 # Threads Clone - Social Media Platform 🌐
+
+</p>
 
 ![Threads Clone Image](image.png)
 
