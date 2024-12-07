@@ -27,7 +27,7 @@ const Page = async () => {
                   alt="profile picture"
                   width={20}
                   height={20}
-                  className="rounded-full object-cover"
+                  className="max-h-5 max-w-5 rounded-full"
                 />
                 <p className="!text-small-regular text-light-1">
                   <span className="mr-1 text-primary-500">
